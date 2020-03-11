@@ -8,7 +8,7 @@ public abstract class Bil {
     private int aargang;
     private int antalDoere;
 
-
+    // Bil Construktor
     public Bil(String regNr, String maerke, String model, int aargang, int antalDoere) {
         this.regNr = regNr;
         this.maerke = maerke;
@@ -17,6 +17,8 @@ public abstract class Bil {
         this.antalDoere = antalDoere;
     }
 
+    // Calculate the common Grøn afgift that apply for all cars, no regard of type.
+    // Specific car type afgift is then added in sub-class.
     public double beregnFaellesAfgift(double kmPrl) {
         int retVal = 0;
         if (kmPrl < 50) { retVal = 330; }
@@ -27,15 +29,16 @@ public abstract class Bil {
         return retVal;
     }
 
-    public String toStringFaelles() {
-        return "regNr: " + regNr +
-                ", maerke: " + maerke +
-                ", model: " + model +
-                ", aargang: " + aargang +
-                ", antalDoere: " + antalDoere;
-    }
-
+    // Abstract Grøn ejerafgift Method - calculated in subclass.
     public abstract double beregnGroenEjerAfgift();
+
+    public String toStringFaelles() {
+        return "Reg. nr.: " + regNr +
+                ", Maerke: " + maerke +
+                ", Model: " + model +
+                ", Aargang: " + aargang +
+                ", Antal doere: " + antalDoere;
+    }
 
     public String getRegNr() {
         return regNr;
@@ -76,4 +79,5 @@ public abstract class Bil {
     public void setAntalDoere(int antalDoere) {
         this.antalDoere = antalDoere;
     }
+
 }

@@ -1,5 +1,4 @@
 package model;
-
 import java.util.ArrayList;
 
 public class Garage {
@@ -7,11 +6,13 @@ public class Garage {
     private String navn;
     private ArrayList<Bil> bilListe;
 
+    // Garage Constructor
     public Garage(String navn) {
         this.navn = navn;
         this.bilListe = new ArrayList<Bil>();
     }
 
+    // Method to add all cars instantiated to the bilListe ArrayList.
     public void tilfoejBil(Bil bil) {
         this.bilListe.add(bil);
     }
@@ -26,6 +27,7 @@ public class Garage {
         return str;
     }
 
+    // Calculate and sum the individual Grøn ejerafgift for all cars in the 'bilListe' ArrayList.
     public double beregnGroenAfgiftForBilPark() {
         double afgift = 0;
         for (Bil bil: bilListe) {

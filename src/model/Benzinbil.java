@@ -5,12 +5,14 @@ public class Benzinbil extends Bil {
     private int oktanTal;
     private double kmPrl;
 
+    // Benzinbil Constructor
     public Benzinbil(String regNr, String maerke, String model, int aargang, int antalDoere, int oktanTal, double kmPrl) {
         super(regNr, maerke, model, aargang, antalDoere);
         this.oktanTal = oktanTal;
         this.kmPrl = kmPrl;
     }
 
+    // Calculate Grøn ejerafgift for Benzinbil.
     @Override
     public double beregnGroenEjerAfgift() {
         return this.beregnFaellesAfgift(this.getKmPrl());
@@ -41,4 +43,5 @@ public class Benzinbil extends Bil {
     public void setKmPrl(double kmPrl) {
         this.kmPrl = kmPrl;
     }
+
 }

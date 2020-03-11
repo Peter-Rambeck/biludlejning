@@ -6,6 +6,7 @@ public class Elbil extends Bil {
     private int maxKm;
     private double whPrKm;
 
+    // Elbil Constructor
     public Elbil(String regNr, String maerke, String model, int aargang, int antalDoere, double batteriKapacitet, int maxKm, double whPrKm) {
         super(regNr, maerke, model, aargang, antalDoere);
         this.batteriKapacitet = batteriKapacitet;
@@ -13,6 +14,7 @@ public class Elbil extends Bil {
         this.whPrKm = whPrKm;
     }
 
+    // Calculate the Grøn ejerafgift for Elbil
     @Override
     public double beregnGroenEjerAfgift() {
         double kmPrl = 100/(this.getWhPrKm()/91.25);
